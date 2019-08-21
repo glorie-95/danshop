@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-31 19:06:28
+/* Smarty version 3.1.33, created on 2019-08-19 21:21:53
   from '/var/www/html/danshop/admin623addtdx/themes/new-theme/template/components/layout/warning_messages.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d41e6b4c88898_87966936',
+  'unifunc' => 'content_5d5b12f12c6b08_30017635',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d41e6b4c88898_87966936 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b12f12c6b08_30017635 (Smarty_Internal_Template $_smarty_tpl) {
 if (count($_smarty_tpl->tpl_vars['warnings']->value)) {?>
   <div class="bootstrap">
     <div class="alert alert-warning">

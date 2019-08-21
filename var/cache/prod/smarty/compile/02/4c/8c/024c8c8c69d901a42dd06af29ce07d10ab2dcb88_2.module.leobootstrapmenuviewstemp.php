@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:29:48
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:07
   from 'module:leobootstrapmenuviewstemp' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b10c2e6659_95437279',
+  'unifunc' => 'content_5d5b043b485618_43046775',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '024c8c8c69d901a42dd06af29ce07d10ab2dcb88' => 
     array (
       0 => 'module:leobootstrapmenuviewstemp',
-      1 => 1563971745,
+      1 => 1564687080,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b10c2e6659_95437279 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b043b485618_43046775 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['group_type']->value && $_smarty_tpl->tpl_vars['group_type']->value == 'horizontal') {?>
 	<nav data-megamenu-id="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['megamenu_id']->value, ENT_QUOTES, 'UTF-8');?>
 " class="leo-megamenu cavas_menu navbar navbar-default <?php if ($_smarty_tpl->tpl_vars['show_cavas']->value && $_smarty_tpl->tpl_vars['show_cavas']->value == 1) {?>enable-canvas<?php } else { ?>disable-canvas<?php }?> <?php if ($_smarty_tpl->tpl_vars['group_class']->value && $_smarty_tpl->tpl_vars['group_class']->value != '') {

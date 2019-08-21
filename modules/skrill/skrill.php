@@ -50,7 +50,7 @@ class Skrill extends PaymentModule
     {
         $this->name = 'skrill';
         $this->tab = 'payments_gateways';
-        $this->version = '2.0.31';
+        $this->version = '2.0.33';
         $this->ps_versions_compliancy = array('min' => '1.7', 'max' => _PS_VERSION_);
         $this->author = 'Skrill';
         $this->module_key = '6f71ca0e0e3465122dfdfeb5d3a43a19';
@@ -579,6 +579,7 @@ class Skrill extends PaymentModule
         $address = new Address((int)$this->context->cart->id_address_delivery);
         $country = new Country($address->id_country);
         $countryCode = $country->iso_code;
+        $countryCode3Digit = SkrillPaymentCore::getCountryIso3ByIso2($countryCode);
         $supportedPayments = SkrillPaymentCore::getSupportedPaymentsByCountryCode($countryCode);
 
         $paymentSort = 1000;
@@ -597,8 +598,11 @@ class Skrill extends PaymentModule
                 $paymentsConfig[$paymentSort] = array(
                    'name' => Tools::strtolower($paymentType)
                 );
-                if (isset($paymentMethods[$paymentType]['logos'])) {
-                    $paymentsConfig[$paymentSort]['logos'] = $paymentMethods[$paymentType]['logos'];
+                $bankOfCountries = $paymentMethods[$paymentType]['allowedCountries'][$countryCode3Digit];
+                if (isset($bankOfCountries)) {
+                    foreach ($bankOfCountries as $bankLogo) {
+                        $paymentsConfig[$paymentSort]['logos'][] = $bankLogo;
+                    }
                 }
             }
             $paymentSort++;
@@ -714,7 +718,7 @@ class Skrill extends PaymentModule
         return $this->display(__FILE__, 'payment_return.tpl');
     }
 
-    public function refundOrder($params, &$refId, $isFraud = false)
+    public function refundOrder($params, &$refId, $isFraud = false, $isPartial = false)
     {
         $fieldParams = $this->getSkrillCredentials();
         if (!$isFraud) {
@@ -735,10 +739,16 @@ class Skrill extends PaymentModule
             $objectId = $this->context->cart->id;
         }
 
-        PrestaShopLogger::addLog('Skrill - get refund parameters', 1, null, $objectType, $objectId, true);
+        $amount = isset($row['amount']) ? $row['amount'] : $params['amount'];
         $refId = isset($row['ref_id']) ? $row['ref_id'] : $params['mb_transaction_id'];
+        if ($isPartial) {
+            $amount = self::setNumberFormat($params['amount']);
+            $refId = $row['ref_id'];
+        }
+
+        PrestaShopLogger::addLog('Skrill - get refund parameters', 1, null, $objectType, $objectId, true);
         $fieldParams['mb_transaction_id'] = $refId;
-        $fieldParams['amount'] = isset($row['amount']) ? $row['amount'] : $params['amount'];
+        $fieldParams['amount'] = $amount;
         $logsParams = $fieldParams;
         $logsParams['password'] = '******';
         $messageLog = 'Skrill - update order parameters : '. print_r($logsParams, true);
@@ -1042,7 +1052,7 @@ class Skrill extends PaymentModule
                 break;
             case 'SKRILL_FRONTEND_PM_SFT':
                 if ($this->l('SKRILL_FRONTEND_PM_SFT') == "SKRILL_FRONTEND_PM_SFT") {
-                    $paymentLocale = "Sofort";
+                    $paymentLocale = "Klarna";
                 } else {
                     $paymentLocale = $this->l('SKRILL_FRONTEND_PM_SFT');
                 }
@@ -1112,21 +1122,21 @@ class Skrill extends PaymentModule
                 break;
             case 'SKRILL_FRONTEND_PM_ADB':
                 if ($this->l('SKRILL_FRONTEND_PM_ADB') == "SKRILL_FRONTEND_PM_ADB") {
-                    $paymentLocale = "Direct Bank Transfer (Supported Banks)";
+                    $paymentLocale = "Direct Bank Transfer";
                 } else {
                     $paymentLocale = $this->l('SKRILL_FRONTEND_PM_ADB');
                 }
                 break;
             case 'SKRILL_FRONTEND_PM_AOB':
                 if ($this->l('SKRILL_FRONTEND_PM_AOB') == "SKRILL_FRONTEND_PM_AOB") {
-                    $paymentLocale = "Manual Bank Transfer (Supported Banks)";
+                    $paymentLocale = "Manual Bank Transfer";
                 } else {
                     $paymentLocale = $this->l('SKRILL_FRONTEND_PM_AOB');
                 }
                 break;
             case 'SKRILL_FRONTEND_PM_ACI':
                 if ($this->l('SKRILL_FRONTEND_PM_ACI') == "SKRILL_FRONTEND_PM_ACI") {
-                    $paymentLocale = "Cash / Invoice (Supported Banks)";
+                    $paymentLocale = "Cash / Invoice";
                 } else {
                     $paymentLocale = $this->l('SKRILL_FRONTEND_PM_ACI');
                 }
@@ -1274,7 +1284,7 @@ class Skrill extends PaymentModule
                 break;
             case 'SKRILL_BACKEND_PM_SFT':
                 if ($this->l('SKRILL_BACKEND_PM_SFT') == "SKRILL_BACKEND_PM_SFT") {
-                    $paymentLocale = "Sofort";
+                    $paymentLocale = "Klarna";
                 } else {
                     $paymentLocale = $this->l('SKRILL_BACKEND_PM_SFT');
                 }
@@ -2110,10 +2120,15 @@ class Skrill extends PaymentModule
             } else {
                 $payments[$i]['tooltips'] = "";
             }
-            if (isset($paymentMethods[$paymentType]['banks'])) {
-                foreach ($paymentMethods[$paymentType]['banks'] as $bank) {
-                    $bankName = 'SKRILL_BACKEND_AB_'.$paymentType."_".str_replace(' ', '', Tools::strtoupper($bank));
-                    $payments[$i]['banks'][] = $this->getBackendPaymentLocale($bankName);
+            if (is_array($paymentMethods[$paymentType]['allowedCountries'])) {
+                foreach ($paymentMethods[$paymentType]['allowedCountries'] as $bankOfCountries) {
+                    if (is_array($bankOfCountries)) {
+                        foreach (array_keys($bankOfCountries) as $bankName) {
+                            $bankLocale = 'SKRILL_BACKEND_AB_'.$paymentType
+                            ."_".str_replace(' ', '', Tools::strtoupper($bankName));
+                            $payments[$i]['banks'][] = $this->getBackendPaymentLocale($bankLocale);
+                        }
+                    }
                 }
             }
             $i++;
@@ -2547,9 +2562,10 @@ class Skrill extends PaymentModule
         $locale['dnk']['tooltips'] = 'Denmark';
         $locale['psp']['tooltips'] = 'Italy';
         $locale['csi']['tooltips'] = 'Italy';
-        $locale['obt']['tooltips'] = 'Austria, Denmark, Finland, France, Germany,
-            Hungary, Italy, Norway, Poland, Portugal, Spain,
-            Sweden, United Kingdom.';
+        $locale['obt']['tooltips'] = 'Austria, Belgium, Bulgaria, Denmark,
+            Estonia, Finland, France, Germany, Hungary, Italy, Latvia,
+            Netherlands, Norway, Poland, Portugal, Spain, Sweden,
+            United Kingdom, United State Of America';
         $locale['gir']['tooltips'] = 'Germany';
         $locale['did']['tooltips'] = 'Germany';
         $locale['sft']['tooltips'] = ' Germany, Austria, Belgium, Netherlands, Italy,

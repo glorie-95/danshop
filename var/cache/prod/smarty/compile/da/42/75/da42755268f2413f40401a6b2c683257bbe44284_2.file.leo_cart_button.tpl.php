@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:29:47
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:04
   from '/var/www/html/danshop/themes/leo_nunica/modules/leofeature/views/templates/hook/leo_cart_button.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b10b39e282_54576183',
+  'unifunc' => 'content_5d5b0438e39ad5_88365461',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b10b39e282_54576183 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b0438e39ad5_88365461 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="button-container cart">
 	<form action="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['link_cart']->value, ENT_QUOTES, 'UTF-8');?>

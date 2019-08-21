@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:29:47
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:04
   from '/var/www/html/danshop/themes/leo_nunica/modules/leofeature/views/templates/hook/leo_compare_button.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b10b349159_93912217',
+  'unifunc' => 'content_5d5b0438e1f0a5_01029611',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b10b349159_93912217 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b0438e1f0a5_01029611 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="compare">
 	<a class="leo-compare-button btn-product btn<?php if ($_smarty_tpl->tpl_vars['added']->value) {?> added<?php }?>" href="#" data-id-product="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['leo_compare_id_product']->value, ENT_QUOTES, 'UTF-8');?>
 " title="<?php if ($_smarty_tpl->tpl_vars['added']->value) {

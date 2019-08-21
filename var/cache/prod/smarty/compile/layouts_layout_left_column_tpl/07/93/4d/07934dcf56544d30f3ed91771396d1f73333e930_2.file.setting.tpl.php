@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:31:26
+/* Smarty version 3.1.33, created on 2019-08-19 21:00:39
   from '/var/www/html/danshop/themes/leo_nunica/templates/layouts/setting.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b16e1a5a30_07221774',
+  'unifunc' => 'content_5d5b0df79ba209_95825080',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b16e1a5a30_07221774 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b0df79ba209_95825080 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_assignInScope('ENABLE_RESPONSIVE', "1" ,false ,32);
 $_smarty_tpl->_assignInScope('LISTING_GRID_MODE', "grid" ,false ,32);
 $_smarty_tpl->_assignInScope('LISTING_PRODUCT_COLUMN_MODULE', "3" ,false ,32);

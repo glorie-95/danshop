@@ -1,6 +1,6 @@
 Hallo,
 
-Das Produkt {product} ist ab sofort wieder erhältlich.
+Das Produkt {product} ist ab Klarna wieder erhältlich.
 Sie können ihn gleich in Ihrem Online-Shop bestellen.
 
 Wechseln Sie einfach auf die Produktseite, indem Sie auf den folgenden Link klicken:  {product}

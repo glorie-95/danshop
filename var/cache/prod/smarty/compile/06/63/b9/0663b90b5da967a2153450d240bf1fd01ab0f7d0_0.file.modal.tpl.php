@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-31 19:06:31
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:02
   from '/var/www/html/danshop/modules/ps_mbo/views/templates/admin/modal.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d41e6b77a9f26_97947732',
+  'unifunc' => 'content_5d5b0436e40cd4_22788911',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d41e6b77a9f26_97947732 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b0436e40cd4_22788911 (Smarty_Internal_Template $_smarty_tpl) {
 ?> 
 <div class="modal fade" id="modules_list_container">
 	<div class="modal-dialog">

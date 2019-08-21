@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:29:47
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:04
   from '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/ApColumn.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b10b06a703_31587535',
+  'unifunc' => 'content_5d5b0438983da8_55876533',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8a4bceba0dbbd91d5c0f4e6b42339b4b1243fc67' => 
     array (
       0 => '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/ApColumn.tpl',
-      1 => 1563971745,
+      1 => 1564687080,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b10b06a703_31587535 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b0438983da8_55876533 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- @file modules\appagebuilder\views\templates\hook\ApColumn -->
 <div<?php if (isset($_smarty_tpl->tpl_vars['formAtts']->value['id']) && $_smarty_tpl->tpl_vars['formAtts']->value['id']) {?> id="<?php echo htmlspecialchars(call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['formAtts']->value['id'],'html','UTF-8' )), ENT_QUOTES, 'UTF-8');?>
 "<?php }?>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:31:26
+/* Smarty version 3.1.33, created on 2019-08-19 21:00:40
   from 'module:psnewproductsviewstemplat' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b16e8b2ad5_65147942',
+  'unifunc' => 'content_5d5b0df8942200_91770738',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:catalog/_partials/miniatures/leo_col_products.tpl' => 1,
   ),
 ),false)) {
-function content_5d42b16e8b2ad5_65147942 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b0df8942200_91770738 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <section class="featured-products clearfix block">
   	<h2 class="h2 products-section-title title_block">

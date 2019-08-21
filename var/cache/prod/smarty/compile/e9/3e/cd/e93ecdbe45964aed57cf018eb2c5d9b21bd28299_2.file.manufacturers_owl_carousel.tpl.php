@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:29:47
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:06
   from '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/manufacturers_owl_carousel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b10bc52345_65839295',
+  'unifunc' => 'content_5d5b043a91e7d1_79323593',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e93ecdbe45964aed57cf018eb2c5d9b21bd28299' => 
     array (
       0 => '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/manufacturers_owl_carousel.tpl',
-      1 => 1563971745,
+      1 => 1564687080,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b10bc52345_65839295 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b043a91e7d1_79323593 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- @file modules\appagebuilder\views\templates\hook\manufacturers_owl_carousel -->
 <div class="owl-row">
 	<div class="timeline-wrapper clearfix prepare owl-manu"

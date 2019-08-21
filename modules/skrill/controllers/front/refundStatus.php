@@ -36,19 +36,39 @@ class SkrillRefundStatusModuleFrontController extends ModuleFrontController
         $transactionId = Tools::getValue('transactionId');
         $order = $this->module->getOrderByTransactionId($transactionId);
 
+        $sql = "SELECT * FROM skrill_order_ref WHERE id_order ='".(int)$order['id_order']."'";
+        $row = Db::getInstance()->getRow($sql);
+        $refund_response = array();
+
         $messageLog = 'Skrill - get response from refund_status_url';
         PrestaShopLogger::addLog($messageLog, 1, null, 'Order', $order['id_order'], true);
         $response = $this->getResponse();
         $messageLog = 'Skrill - response from refund_status_url : ' . print_r($response, true);
         PrestaShopLogger::addLog($messageLog, 1, null, 'Order', $order['id_order'], true);
 
-        if ($order && $order['order_status'] == $this->module->refundPendingStatus) {
+        if (!is_null($row['refund_response'])) {
+            $refund_response = unserialize($row['refund_response']);
+            (float)$refund_response['refunded_amount'] += (float)$response['amount'];
+        } else {
+            $refund_response['refunded_amount'] = (float)$response['amount'];
+        }
+
+        $messageLog = 'Skrill - refunded amount : ' . print_r($refund_response['refunded_amount'], true);
+        PrestaShopLogger::addLog($messageLog, 1, null, 'Order', $order['id_order'], true);
+
+        if (($order && ($order['order_status'] == $this->module->refundPendingStatus))
+            || (Skrill::setNumberFormat($refund_response['refunded_amount']) == $row['amount'])
+        ) {
             $serializedResponse = serialize($response);
             $refundStatus = $this->getRefundStatus($response['status']);
             $this->updateResponse($transactionId, $refundStatus, $serializedResponse, $order['id_order']);
             $this->module->updatePaymentStatus($order['id_order'], $refundStatus);
             $messageLog = 'Skrill - refund_status_url has been successfully updated';
             PrestaShopLogger::addLog($messageLog, 1, null, 'Order', $order['id_order'], true);
+        } else {
+            $response['refunded_amount'] = Skrill::setNumberFormat($refund_response['refunded_amount']);
+            $serializedResponse = serialize($response);
+            $this->updateResponse($transactionId, $refundStatus, $serializedResponse, $order['id_order']);
         }
     }
 

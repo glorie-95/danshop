@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 08:45:34
+/* Smarty version 3.1.33, created on 2019-08-19 21:02:04
   from '/var/www/html/danshop/admin623addtdx/themes/default/template/helpers/kpi/row.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42a6aeaa5050_52824121',
+  'unifunc' => 'content_5d5b0e4cb97a35_06899835',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42a6aeaa5050_52824121 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b0e4cb97a35_06899835 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="panel kpi-container">
 	<?php if ($_smarty_tpl->tpl_vars['refresh']->value) {?>
 		<div class="kpi-refresh"><button class="close refresh" type="button" onclick="refresh_kpis(true);"><i class="process-icon-refresh" style="font-size:1em"></i></button></div>

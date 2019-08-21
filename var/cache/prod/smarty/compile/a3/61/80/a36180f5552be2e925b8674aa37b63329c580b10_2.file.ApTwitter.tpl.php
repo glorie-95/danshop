@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:29:48
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:07
   from '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/ApTwitter.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b10c69eff7_92974127',
+  'unifunc' => 'content_5d5b043b8a9c22_16197867',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a36180f5552be2e925b8674aa37b63329c580b10' => 
     array (
       0 => '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/ApTwitter.tpl',
-      1 => 1563971745,
+      1 => 1564687080,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b10c69eff7_92974127 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b043b8a9c22_16197867 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <!-- @file modules\appagebuilder\views\templates\hook\ApTwitter -->
 <?php if (isset($_smarty_tpl->tpl_vars['formAtts']->value['twidget_id']) && $_smarty_tpl->tpl_vars['formAtts']->value['twidget_id']) {
 if (!isset($_smarty_tpl->tpl_vars['formAtts']->value['accordion_type']) || $_smarty_tpl->tpl_vars['formAtts']->value['accordion_type'] == 'full') {?><div class="block widget-twitter <?php echo htmlspecialchars(isset($_smarty_tpl->tpl_vars['formAtts']->value['class']) ? $_smarty_tpl->tpl_vars['formAtts']->value['class'] : call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( '','html','UTF-8' )), ENT_QUOTES, 'UTF-8');?>

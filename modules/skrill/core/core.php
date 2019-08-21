@@ -127,7 +127,8 @@ class SkrillPaymentCore
         'OBT' => array(
             'name' => 'Rapid Transfer',
             'allowedCountries'  => array(
-                'AUT','DNK','FIN','FRA','DEU','HUN','ITA','NOR','POL','PRT','ESP','SWE','GBR'
+                'AUT','BEL','BGR','DNK','ESP','EST','FIN','FRA','DEU','HUN','ITA','LVA','NLD','NOR',
+                'POL','PRT','SWE','GBR','USA'
             )
         ),
         'GIR' => array(
@@ -139,7 +140,7 @@ class SkrillPaymentCore
             'allowedCountries' => array('DEU')
         ),
         'SFT' => array(
-            'name' => 'Sofort',
+            'name' => 'Klarna',
             'allowedCountries' => array('DEU','AUT','BEL','NLD','ITA','FRA','POL','HUN','SVK','CZE','GBR')
         ),
         'EBT' => array(
@@ -188,29 +189,68 @@ class SkrillPaymentCore
         ),
         'ACI' => array(
             'name' => 'Cash / Invoice',
-            'allowedCountries' => array('ARG','BRA','CHL','CHN','COL','MEX','PER','URY'),
-            'logos' => array(
-                'red-link.jpg','pago-facil.jpg','boleto-bancario.jpg','servi-pag.jpg','efecty.jpg','davivienda.jpg',
-                'exito.jpg','banco-de-occidente.jpg','carulla.jpg','edeq.jpg','surtimax.jpg','bancomer_m.jpg',
-                'oxxo.jpg','banamex.jpg','santander.jpg','red-pagos.jpg'
-            ),
-            'banks' => array(
-                'RedLink','Pago Facil','Boleto Bancario','Servi Pag','Efecty','Davivienda',
-                'Exito','Banco de Occidente','Carulla','EDEQ','SurtiMax','BBVA Bancomer',
-                'OXXO','Banamex','Banco Santander','Redpagos'
+            'allowedCountries' => array(
+                'ARG' => array(
+                    'RedLink' => 'red-link.jpg',
+                    'Pago Facil' => 'pago-facil.jpg'
+                ),
+                'BRA' => array(
+                    'Boleto Bancario' => 'boleto-bancario.jpg'
+                ),
+                'CHL' => array(
+                    'Servi Pag' => 'servi-pag.jpg'
+                ),
+                'COL' => array(
+                    'Efecty' => 'efecty.jpg',
+                    'Davivienda' => 'davivienda.jpg',
+                    'Éxito' => 'exito.jpg',
+                    'Carulla' => 'carulla.jpg',
+                    'EDEQ' => 'edeq.jpg',
+                    'SurtiMax' => 'surtimax.jpg'
+                ),
+                'MEX' => array(
+                    'OXXO' => 'oxxo.jpg',
+                    'BBVA Bancomer' => 'bancomer_m.jpg',
+                    'Banamex' => 'banamex.jpg',
+                    'Banco Santander' => 'santander.jpg',
+                ),
+                'PER' => array(
+                    'Banco de Occidente' => 'banco-de-occidente.jpg'
+                ),
+                'URY' => array(
+                    'Redpagos' => 'red-pagos.jpg'
+                )
             )
         ),
         'ADB' => array(
             'name' => 'Direct Bank Transfer',
-            'allowedCountries' => array('ARG','BRA'),
-            'logos' => array('santander-rio.jpg','itau.jpg','banco-do-brasil.jpg','bradesco.jpg'),
-            'banks' => array('Banco Santander Rio','Banco Itau','Banco do Brasil','Banco Bradesco')
+            'allowedCountries' => array(
+                'ARG' => array(
+                    'Banco Santander Rio' => 'santander-rio.jpg'
+                ),
+                'BRA' => array(
+                    'Banco Itau' => 'itau.jpg',
+                    'Banco do Brasil' => 'banco-do-brasil.jpg',
+                    'Banco Bradesco' => 'bradesco.jpg'
+                )
+            )
         ),
         'AOB' => array(
             'name' => 'Manual Bank Transfer',
-            'allowedCountries' => array('BRA','CHL','CHN','COL'),
-            'logos' => array('hsbc.jpg','caixa.jpg','santander.jpg','PSEi.jpg','webpaylogo.jpg','bancolombia.jpg'),
-            'banks' => array('HSBC','Caixa','Santander','PSEi','WebPay','Bancolombia')
+            'allowedCountries' => array(
+                'BRA'=> array(
+                    'HSBC' =>'hsbc.jpg',
+                    'Caixa' => 'caixa.jpg',
+                    'Santander' => 'santander.jpg'
+                ),
+                'CHL' => array(
+                    'WebPay' => 'webpaylogo.jpg'
+                ),
+                'COL' => array(
+                    'Bancolombia' => 'bancolombia.jpg',
+                    'PSEi' => 'PSEi.jpg'
+                )
+            ),
         ),
         'AUP' => array(
             'name' => 'Unionpay',
@@ -434,8 +474,14 @@ class SkrillPaymentCore
                 if ($paymentMethod['allowedCountries'] == 'ALL') {
                     $paymentMethod['allowedCountries'] = self::$allowedCountries;
                 }
-                if (in_array($countryCode, $paymentMethod['allowedCountries'])) {
-                    $supportedPayments[] =  $key;
+                if ($key == 'AOB' || $key == 'ADB' || $key == 'ACI') {
+                    if (in_array($countryCode, array_keys($paymentMethod['allowedCountries']))) {
+                        $supportedPayments[] =  $key;
+                    }
+                } else {
+                    if (in_array($countryCode, $paymentMethod['allowedCountries'])) {
+                        $supportedPayments[] =  $key;
+                    }
                 }
             }
         }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:29:49
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:09
   from 'module:leofeatureviewstemplatesf' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b10d1ba794_08588175',
+  'unifunc' => 'content_5d5b043dcc5df6_09149414',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '182aea6706a2d4ae5bfc3f6d3a5b33417c49b6af' => 
     array (
       0 => 'module:leofeatureviewstemplatesf',
-      1 => 1563971745,
+      1 => 1564687080,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b10d1ba794_08588175 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b043dcc5df6_09149414 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="leo-notification" style="width: <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['width_notification']->value, ENT_QUOTES, 'UTF-8');?>
 ; <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['vertical_position']->value, ENT_QUOTES, 'UTF-8');?>
 ; <?php echo htmlspecialchars($_smarty_tpl->tpl_vars['horizontal_position']->value, ENT_QUOTES, 'UTF-8');?>

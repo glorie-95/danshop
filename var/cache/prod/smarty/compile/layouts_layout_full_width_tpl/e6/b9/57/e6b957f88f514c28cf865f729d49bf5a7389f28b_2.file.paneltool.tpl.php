@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:29:48
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:07
   from '/var/www/html/danshop/themes/leo_nunica/modules/appagebuilder/views/templates/front/info/paneltool.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b10c6dfbf3_03483400',
+  'unifunc' => 'content_5d5b043b92a738_70526856',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b10c6dfbf3_03483400 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b043b92a738_70526856 (Smarty_Internal_Template $_smarty_tpl) {
 if (class_exists("LeoFrameworkHelper")) {
 $_smarty_tpl->_assignInScope('skins', LeoFrameworkHelper::getSkins($_smarty_tpl->tpl_vars['LEO_THEMENAME']->value));
 $_smarty_tpl->_assignInScope('header_styles', LeoFrameworkHelper::getPanelConfigByTheme('header',$_smarty_tpl->tpl_vars['LEO_THEMENAME']->value));
@@ -196,7 +196,7 @@ $_smarty_tpl->tpl_vars['group']->iteration = 0;
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['group']->value) {
 $_smarty_tpl->tpl_vars['group']->iteration++;
-$__foreach_group_46_saved = $_smarty_tpl->tpl_vars['group'];
+$__foreach_group_43_saved = $_smarty_tpl->tpl_vars['group'];
 ?>
 											<div class="accordion-group card panel panel-default">
 												<div class="accordion-heading card-header panel-heading">
@@ -390,7 +390,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 												</div>
 											</div>
 										<?php
-$_smarty_tpl->tpl_vars['group'] = $__foreach_group_46_saved;
+$_smarty_tpl->tpl_vars['group'] = $__foreach_group_43_saved;
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>

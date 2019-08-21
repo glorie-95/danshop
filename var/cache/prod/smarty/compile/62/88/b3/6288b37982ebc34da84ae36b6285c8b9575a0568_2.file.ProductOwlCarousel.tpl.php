@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:29:47
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:04
   from '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/ProductOwlCarousel.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b10b1e8b14_11999336',
+  'unifunc' => 'content_5d5b0438dcd6d9_03221081',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6288b37982ebc34da84ae36b6285c8b9575a0568' => 
     array (
       0 => '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/ProductOwlCarousel.tpl',
-      1 => 1563971745,
+      1 => 1564687080,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b10b1e8b14_11999336 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b0438dcd6d9_03221081 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- @file modules\appagebuilder\views\templates\hook\ProductOwlCarousel -->
 <div class="owl-row">
 	<div class="timeline-wrapper clearfix prepare"

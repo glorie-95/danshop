@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:29:48
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:07
   from '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/config.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b10c6f2569_83570817',
+  'unifunc' => 'content_5d5b043b94b861_09481706',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '653beaa0faca578a93a47a4394863ba8e655c8c5' => 
     array (
       0 => '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/config.tpl',
-      1 => 1563971745,
+      1 => 1564687080,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b10c6f2569_83570817 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b043b94b861_09481706 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="group-input group-<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['ap_cf']->value, ENT_QUOTES, 'UTF-8');?>
  clearfix">
 		<label class="col-sm-12 control-label">

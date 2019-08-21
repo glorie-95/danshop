@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:29:47
+/* Smarty version 3.1.33, created on 2019-08-19 20:19:04
   from '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/ApRow.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42b10b099431_06285075',
+  'unifunc' => 'content_5d5b04389b0937_75305801',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '040dfa2443047f55e7520fc7bfbdc56a093fc8a5' => 
     array (
       0 => '/var/www/html/danshop/modules/appagebuilder/views/templates/hook/ApRow.tpl',
-      1 => 1563971745,
+      1 => 1564687080,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42b10b099431_06285075 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d5b04389b0937_75305801 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- @file modules\appagebuilder\views\templates\hook\ApRow -->
 <?php if (isset($_smarty_tpl->tpl_vars['formAtts']->value['container']) && $_smarty_tpl->tpl_vars['formAtts']->value['container']) {?>
 <div class="wrapper" <?php if (isset($_smarty_tpl->tpl_vars['formAtts']->value['bg_config']) && $_smarty_tpl->tpl_vars['formAtts']->value['bg_config'] == "fullwidth" && isset($_smarty_tpl->tpl_vars['formAtts']->value['bg_data']) && $_smarty_tpl->tpl_vars['formAtts']->value['bg_data']) {?>style="background:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['formAtts']->value['bg_data'], ENT_QUOTES, 'UTF-8');?>

@@ -16,7 +16,6 @@
 {if $module == "skrill"}
     <script>
         $(document).ready(function() {
-            $('#desc-order-partial_refund').css("display","none");
             $('#desc-order-standard_refund').css("display","none");
             var refundButton = {$refundButton|escape:'htmlall':'UTF-8'};
             if (refundButton) {
